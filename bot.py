@@ -36,15 +36,37 @@ def received_information(update, context):
 def help(update, context):
     """Send a message when the command /help is issued."""
     update.message.reply_text(
-        """ Este bot te ayudara con el pago de tu tarifa electrica,
-        lo unico que tienes es que seleccionar el comando /calcular_tarifa e introducir el numero del consumo.
+        """ Este bot te ayudara con el pago de tu tarifa electrica,lo unico que tienes es que seleccionar el comando /calcular_tarifa e introducir el numero del consumo.
         Como saber el consumo?
         R/ Existen dos vias:
-           1- Viendo el contador y restar la lectura actual a la lectura del mes pasado
-           2- Revisar el ticket de la empresa electrica , ahi se muestra el consumo
+         1- Viendo el contador y restar la lectura actual a la lectura del mes pasado
+         2- Revisar el ticket de la empresa electrica , ahi se muestra el consumo
         Espero que este bot sea de tu agrado y que te sea util 😁!!
         """
         )
+def rango(update, context):
+    update.message.reply_text(
+        """ 
+             Rango en kWh     Precio(Cup)	 	 	 	 
+             0 -   100	        0.33	 
+             101 - 150          1.07	 
+             151 - 200     	    1.43	 
+             201 - 250	        2.46	 
+             251 - 300	        3.00	 
+             301 - 350	        4.00	 
+             351 - 400	        5.00	 
+             401 - 450	        6.00	 
+             451 - 500	        7.00	 
+             501 - 600	        9.20	 
+             601 - 700	        9.45	 
+             701 - 1000	        9.85	 
+             1001 - 1800        10.80	 
+             1801 - 2600        11.80	 
+             2601 - 3400        12.90	 
+             3401 - 4200        13.95	 
+             4201 - 5000        15.00	 
+             Más de 5000	    20.00	
+    """)
 
 def echo(update, context):
     """Echo the user message."""
@@ -63,6 +85,7 @@ def main():
 
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("rangos", rangos))
     dp.add_handler(CommandHandler("help", help))
 
     dp.add_handler(ConversationHandler(
