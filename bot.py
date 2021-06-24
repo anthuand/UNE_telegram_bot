@@ -44,7 +44,7 @@ def help(update, context):
         Espero que este bot sea de tu agrado y que te sea util 😁!!
         """
         )
-def rango(update, context):
+def rangos(update, context):
     update.message.reply_text(
         """ 
              Rango en kWh     Precio(Cup)	 	 	 	 
