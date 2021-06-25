@@ -17,7 +17,7 @@ TOKEN = os.getenv('TOKEN')
 
 def start(update, context):
     """Send a message when the command /start is issued."""
-    update.message.reply_text('Este bot te ayudará a saber el importe te du tarifa electrica a partir del consumo en Kw!')
+    update.message.reply_text('Este bot te ayudará a saber el importe de tu tarifa electrica a partir del consumo en Kw!')
 
 def calcular_tarifa(update, context):
     update.message.reply_text('Introduce solo el numero del consumo: \n Ej: 450')
